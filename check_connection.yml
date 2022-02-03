@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+  - debug:
+      msg:
+      - "Hostname: {{ ansible_hostname }}"
+      - "OS: {{ ansible_distribution_version }}"
+      - "Kernel: {{ ansible_kernel }}"
+      - "IP Address: {{ ansible_all_ipv4_addresses }}"
+      - "Python Version: {{ ansible_python_version }}"
+      - "Type: {{ ansible_product_name }}"
+
+  - name: Check Connectivity
+    ping:
